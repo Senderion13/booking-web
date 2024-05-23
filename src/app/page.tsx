@@ -1,6 +1,36 @@
-import Image from "next/image";
+//import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
+  return (
+    <main className="flex min-h-fit flex-col items-center justify-between p-12">
+      <h1 className="font-bold mb-40 text-4xl">Hotel List</h1>
+      <div className="grid grid-cols-3 gap-20 items-center justify-evenly">
+        <button className="bg-blue-500 rounded-md px-4 py-2">
+          <Link href="/1">Hotel 1</Link>
+        </button>
+        <button className="bg-blue-500 rounded-md px-4 py-2">
+          <Link href="/2">Hotel 2</Link>
+        </button>
+        <button className="bg-blue-500 rounded-md px-4 py-2">
+          <Link href="/3">Hotel 3</Link>
+        </button>
+        <button className="bg-blue-500 rounded-md px-4 py-2">
+          <Link href="/4">Hotel 4</Link>
+        </button>
+        <button className="bg-blue-500 rounded-md px-4 py-2">
+          <Link href="/5">Hotel 5</Link>
+        </button>
+        <button className="bg-blue-500 rounded-md px-4 py-2">
+          <Link href="/6">Hotel 6</Link>
+        </button>
+      </div>
+    </main>
+  );
+}
+
+/*export default function Home() {
+  // Home Page
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -110,4 +140,4 @@ export default function Home() {
       </div>
     </main>
   );
-}
+}*/
