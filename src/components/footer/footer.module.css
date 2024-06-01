@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  height: 10vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #305776;
+}
+
+@media (max-height: 750px) {
+  .container {
+    height: 15vh;
+  }
+}
+
+@media (max-height: 450px) {
+  .container {
+    height: 25vh;
+  }
+}
+
+.innerContainer {
+  background-color: white;
+  border-radius: 10px;
+  height: 55%;
+  width: 95%;
+  max-width: 100%;
+  min-height: 55%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  float: left;
+  justify-content: center;
+  align-items: center;
+  width: 33.33%;
+  height: 100%;
+}

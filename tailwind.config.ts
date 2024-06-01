@@ -37,6 +37,7 @@ const config: Config = {
       "11xl": "1.875rem",
       "21xl": "2.5rem",
       inherit: "inherit",
+      xs: "0.75rem",
     },
     screens: {
       lg: {
