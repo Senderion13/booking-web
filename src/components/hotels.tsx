@@ -22,7 +22,7 @@ const Hotels: NextPage = () => {
         Найкращі готелі Києва
       </h3>
       <div className="self-stretch overflow-x-auto grid flex-row items-start justify-start gap-[1.312rem] max-w-full grid-cols-[repeat(3,_minmax(297px,_1fr))] mq750:grid-cols-[minmax(297px,_1fr)] mq1050:justify-center mq1050:grid-cols-[repeat(2,_minmax(297px,_515px))]">
-        {hotels.map((hotel) => {
+        {hotels?.map((hotel) => {
           return (
             <a key={hotel.id}>
               <HotelFrame

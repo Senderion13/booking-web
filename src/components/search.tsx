@@ -30,7 +30,7 @@ const Search: NextPage = () => {
   );
   useEffect(() => {
     setHotels(data);
-  }, []);
+  }, [data]);
   const [titles, setTitles] = useState<Array<string>>();
   const { setHotels } = useContext(HotelsContext);
   const submitSearch = async () => {
