@@ -46,10 +46,7 @@ const Search: NextPage = () => {
     const repo = await res.json();
     console.log(repo);
     setDataset(repo);
-    window.localStorage.setItem("hotelsCount", repo.length);
-    for (let index = 0; index < repo.length; index++) {
-      window.localStorage.setItem("hotel" + index, JSON.stringify(repo[index]));
-    }
+    window.localStorage.setItem("hotels", JSON.stringify(repo));
   };
   return (
     <>

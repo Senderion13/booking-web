@@ -1,7 +1,7 @@
 import Head from "../components/head";
 import Search from "../components/search";
 import Hotels from "../components/hotels";
-import Footer from "../components/footer";
+import Footer from "../components/footer/footer";
 
 export default function Home() {
   return (

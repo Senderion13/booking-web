@@ -11,15 +11,16 @@ export type HotelsType = {
 };
 
 const Hotels: NextPage = () => {
-  const list = document.querySelector("#hotelFrameList");
-  for (
-    let index = 0;
-    index < Number(window.localStorage.getItem("hotelsCount"));
-    index++
-  ) {
-    const rawHotel = window.localStorage.getItem("hotel" + index);
-    const hotel = JSON.parse(rawHotel ? rawHotel : "");
-  }
+  const [hotels, setHotels] = useState<Array<HotelsType>>([
+    { title: "", location: "", rating: 0, description: "" },
+  ]);
+  useEffect(() => {
+    console.log(localStorage.getItem("hotels"));
+    //const rawHotel = localStorage.getItem("hotels");
+    //const hotel = JSON.parse(rawHotel ? rawHotel : "");
+    //setHotels([...hotels, hotel]);
+  });
+
   return (
     <div
       className={`self-stretch flex flex-col items-start justify-start gap-[2.25rem] max-w-full text-left text-[2.25rem] text-gray font-namu mq750:gap-[1.125rem]`}
