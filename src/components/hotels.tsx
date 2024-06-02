@@ -2,8 +2,9 @@
 import type { NextPage } from "next";
 import HotelFrame from "./hotel-frame";
 import { useContext, useEffect, useState } from "react";
+import { HotelsContext } from "@/contexts/HotelsContextProvider";
 
-export type HotelsType = {
+export type Hotel = {
   id: number;
   title: string;
   location: string;
@@ -12,14 +13,7 @@ export type HotelsType = {
 };
 
 const Hotels: NextPage = () => {
-  const [hotels, setHotels] = useState<Array<HotelsType>>([
-    { id: -1, title: "", location: "", rating: 0, description: "" },
-  ]);
-  useEffect(() => {
-    const h = localStorage.getItem("hotels");
-    setHotels(JSON.parse(h ? h : ""));
-  });
-
+  const { hotels } = useContext(HotelsContext);
   return (
     <div
       className={`self-stretch flex flex-col items-start justify-start gap-[2.25rem] max-w-full text-left text-[2.25rem] text-gray font-namu mq750:gap-[1.125rem]`}
