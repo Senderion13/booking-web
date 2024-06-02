@@ -1,6 +1,7 @@
 import Head from "../components/head";
 import Search from "../components/search";
-import Hotels from "../components/hotels";
+import React, { useEffect } from "react";
+import Hotels from "@/components/hotels";
 
 export default function Home() {
   return (

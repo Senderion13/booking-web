@@ -11,6 +11,7 @@ const Head: NextPage<HeadType> = ({
   className = "",
   bgphoto = "/foto@2x.png",
 }) => {
+
   return (
     <section
       className={`self-stretch bg-steelblue overflow-hidden flex flex-col items-start justify-start pt-[1.937rem] pb-[7.312rem] pr-[8.937rem] pl-[9.25rem] box-border relative gap-[11.75rem] max-w-full text-left text-[1.5rem] text-white font-namu mq450:gap-[2.938rem] mq450:pl-[1.25rem] mq450:pr-[1.25rem] mq450:box-border mq750:gap-[5.875rem] mq750:pt-[1.25rem] mq750:pb-[4.75rem] mq750:pr-[4.438rem] mq750:pl-[4.625rem] mq750:box-border ${className}`}
@@ -29,7 +30,7 @@ const Head: NextPage<HeadType> = ({
             Заплануй неймовірний відпочинок
           </h1>
           <div className="flex-1 flex flex-col items-start justify-start pt-[2.906rem] px-[0rem] pb-[0rem] box-border min-w-[28.688rem] max-w-full text-[1.5rem] mq1050:min-w-full">
-            <div className="self-stretch relative whitespace-pre-wrap z-[1] mq450:text-[1.188rem]">
+            <div id="test" className="self-stretch relative whitespace-pre-wrap z-[1] mq450:text-[1.188rem]">
               <p>
                 Знаходь та бронюй вподобані номери будь-якого готелі країни. Цей
                 сервіс допоможе тобі обрати найкращий номер за твоїми
