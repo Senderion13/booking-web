@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import type { NextPage } from "next";
 import Image from "next/image";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export type HotelsType = {
   data: Array<{
@@ -35,8 +35,9 @@ const Search: NextPage = () => {
     "http://127.0.0.1:5000/hotels/all",
     fetcher
   );
-
   const [dataset, setDataset] = useState<HotelsType>(data);
+  const [titles, setTitles] = useState<Array<string>>();
+
   const submitSearch = async () => {
     event?.preventDefault();
     let url = `http://127.0.0.1:5000/hotels/filter?rating=${rating}`;
@@ -44,7 +45,6 @@ const Search: NextPage = () => {
     url += location != "" ? "&location=" + location : "";
     const res = await fetch(url);
     const repo = await res.json();
-    console.log(repo);
     setDataset(repo);
     window.localStorage.setItem("hotels", JSON.stringify(repo));
   };
@@ -112,3 +112,15 @@ const Search: NextPage = () => {
   );
 };
 export default Search;
+
+/*
+<Autocomplete
+            id="title"
+            autoComplete
+            fullWidth
+            options={titles ? titles : [""]}
+            renderInput={(params) => (
+              <TextField {...params} label="Hotel title" />
+            )}
+          />
+*/
