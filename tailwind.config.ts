@@ -10,6 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         white: "#fff",
+        steelblue: {
+          "100": "#4d8fc3",
+          "200": "#305776",
+        },
         seashell: "#fff3eb",
         black: "#000",
         gray: "#081012",
@@ -17,7 +21,6 @@ const config: Config = {
           100: "#e0ab9a",
           200: "#ad7866",
         },
-        steelblue: "#4d8fc3",
       },
       spacing: {},
       fontFamily: {
@@ -37,6 +40,7 @@ const config: Config = {
       "11xl": "1.875rem",
       "21xl": "2.5rem",
       inherit: "inherit",
+      xs: "0.75rem",
     },
     screens: {
       lg: {
