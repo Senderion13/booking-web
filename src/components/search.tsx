@@ -15,7 +15,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import { createContext, useContext, useEffect, useState } from "react";
 import { Hotel } from "./hotels";
-import { HotelsContext } from "@/contexts/HotelsContextProvider";
+import { HotelsContext } from "@/contexts/hotelsContextProvider";
 
 const Search: NextPage = () => {
   const [title, setTitle] = useState<string>("");
@@ -25,7 +25,7 @@ const Search: NextPage = () => {
     fetch(url).then((r) => r.json());
 
   const { data, error, isLoading } = useSWR(
-    "http://127.0.0.1:5000/hotels/all",
+    "http://" + process.env.NEXT_PUBLIC_BASE_URL + "/hotels/all",
     fetcher
   );
   useEffect(() => {
@@ -35,7 +35,7 @@ const Search: NextPage = () => {
   const { setHotels } = useContext(HotelsContext);
   const submitSearch = async () => {
     event?.preventDefault();
-    let url = `http://127.0.0.1:5000/hotels/filter?rating=${rating}`;
+    let url = `http://${process.env.NEXT_PUBLIC_BASE_URL}/hotels/filter?rating=${rating}`;
     url += title != "" ? "&title=" + title : "";
     url += location != "" ? "&location=" + location : "";
     const res = await fetch(url);
@@ -54,7 +54,6 @@ const Search: NextPage = () => {
             placeholder="Title"
             onChange={(event) => {
               setTitle(event.target.value.replace(/ /g, "_"));
-              console.log(event.target.value.replace(/ /g, "_"));
             }}
           />
         </div>
