@@ -2,7 +2,7 @@
 import type { NextPage } from "next";
 import HotelFrame from "./hotel-frame";
 import { useContext, useEffect, useState } from "react";
-import { HotelsContext } from "@/contexts/HotelsContextProvider";
+import { HotelsContext } from "@/contexts/hotelsContextProvider";
 
 export type Hotel = {
   id: number;
@@ -10,6 +10,7 @@ export type Hotel = {
   location: string;
   rating: number;
   description: string;
+  images: string;
 };
 
 const Hotels: NextPage = () => {
@@ -23,10 +24,13 @@ const Hotels: NextPage = () => {
       </h3>
       <div className="self-stretch overflow-x-auto grid flex-row items-start justify-start gap-[1.312rem] max-w-full grid-cols-[repeat(3,_minmax(297px,_1fr))] mq750:grid-cols-[minmax(297px,_1fr)] mq1050:justify-center mq1050:grid-cols-[repeat(2,_minmax(297px,_515px))]">
         {hotels?.map((hotel) => {
+          console.log(hotel.images[0]);
           return (
-            <a key={hotel.id}>
+            <a key={hotel.id} href={"/hotel?hotelId=" + hotel.id}>
               <HotelFrame
-                hotelphoto="/hotel3@2x.png"
+                hotelphoto={
+                  "http://" + process.env.NEXT_PUBLIC_BASE_URL + hotel.images[0]
+                }
                 hotelname={hotel.title.replace(/_/g, " ")}
                 location={hotel.location.replace(/_/g, " ")}
                 rating={hotel.rating / 2}

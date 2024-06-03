@@ -11,7 +11,6 @@ const Head: NextPage<HeadType> = ({
   className = "",
   bgphoto = "/foto@2x.png",
 }) => {
-
   return (
     <section className="self-stretch bg-steelblue-100 overflow-hidden flex flex-col items-center justify-center pt-[2rem] pb-[7rem] box-border relative gap-[11.75rem] max-w-full text-left text-[1.5rem] text-white">
       <Image
