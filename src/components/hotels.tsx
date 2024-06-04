@@ -2,7 +2,7 @@
 import type { NextPage } from "next";
 import HotelFrame from "./hotel-frame";
 import { useContext, useEffect, useState } from "react";
-import { HotelsContext } from "@/contexts/HotelsContextProvider";
+import { HotelsContext } from "@/contexts/hotelsContextProvider";
 
 export type Hotel = {
   id: number;

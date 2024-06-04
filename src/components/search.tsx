@@ -15,7 +15,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import { createContext, useContext, useEffect, useState } from "react";
 import { Hotel } from "./hotels";
-import { HotelsContext } from "@/contexts/HotelsContextProvider";
+import { HotelsContext } from "@/contexts/hotelsContextProvider";
 
 const Search: NextPage = () => {
   const [title, setTitle] = useState<string>("");

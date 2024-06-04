@@ -4,7 +4,7 @@ import Hotels from "../components/hotels";
 import Footer from "../components/footer/footer";
 import { useContext } from "react";
 import { createContext } from "vm";
-import HotelsContextProvider from "@/contexts/HotelsContextProvider";
+import HotelsContextProvider from "@/contexts/hotelsContextProvider";
 
 export default function Home() {
   return (
