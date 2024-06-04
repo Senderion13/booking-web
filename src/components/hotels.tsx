@@ -26,7 +26,6 @@ const Hotels: NextPage = () => {
         {!hotels
           ? "Loading..."
           : hotels?.map((hotel) => {
-              console.log(hotel.images[0]);
               return (
                 <a key={hotel.id} href={"/hotel?hotelId=" + hotel.id}>
                   <HotelFrame

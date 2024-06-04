@@ -14,11 +14,12 @@ const Head: NextPage<HeadType> = ({
   return (
     <section className="self-stretch bg-steelblue-100 overflow-hidden flex flex-col items-center justify-center pt-[2rem] pb-[7rem] box-border relative gap-[11.75rem] max-w-full text-left text-[1.5rem] text-white">
       <Image
-        className="w-full h-full absolute !m-[0] top-[0rem] right-[0rem] bottom-[0rem] left-[0rem] rounded max-w-full overflow-hidden max-h-full object-cover"
+        className="w-full h-full absolute top-[0vh] right-[0vw] bottom-[0vh] left-[0vw] rounded max-w-full overflow-hidden max-h-full object-cover"
         alt=""
         src={bgphoto}
-        width={1440}
-        height={565}
+        width={1920}
+        height={1080}
+        priority
       />
       <Header />
       <div className="w-[69rem] flex flex-col items-center justify-center py-[0rem] px-[0.625rem] box-border max-w-full text-[3.125rem] z-[1]">
