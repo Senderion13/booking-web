@@ -24,16 +24,14 @@ const HotelFrame: NextPage<HotelFrame> = ({
   rating,
 }) => {
   return (
-    <div className="self-stretch flex-1 rounded bg-seashell overflow-hidden shrink-0 flex flex-col items-start justify-start pt-[1.312rem] px-[1.25rem] pb-[2rem] box-border gap-[0.75rem] max-w-full mq750:pt-[1.25rem] mq750:pb-[1.313rem] mq750:box-border">
+    <div className="h-full self-stretch rounded bg-seashell overflow-hidden shrink-0 flex flex-col items-start justify-start pt-[1.312rem] px-[1.25rem] pb-[1rem] box-border gap-[0.75rem] max-w-full mq750:pt-[1.25rem] mq750:pb-[1.313rem] mq750:box-border">
       <Image
-        className={
-          "self-stretch flex-1 relative rounded max-w-full overflow-hidden max-h-full object-cover"
-        }
+        style={{ width: "353px", height: "256px", objectFit: "cover" }}
         loading="lazy"
         alt=""
         src={hotelphoto}
-        width={526}
-        height={353}
+        width={353}
+        height={256}
       />
       <div className="self-stretch flex flex-col items-start justify-start gap-[2rem] mq450:gap-[1rem]">
         <div className="self-stretch flex flex-col items-start justify-start">

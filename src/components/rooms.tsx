@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from "react";
 import { RoomsContext } from "@/contexts/roomsContextProvider";
 import useSWR from "swr";
 import { useSearchParams } from "next/navigation";
+import { Container, Grid } from "@mui/material";
 
 export type Room = {
   id: number;
@@ -37,10 +38,14 @@ export default function Rooms() {
     console.log(data);
   }, [data]);
   return (
-    <div className="self-stretch overflow-x-auto grid flex-row items-start justify-start gap-[1.312rem] max-w-full grid-cols-[repeat(3,_minmax(297px,_1fr))] mq750:grid-cols-[minmax(297px,_1fr)] mq1050:justify-center mq1050:grid-cols-[repeat(2,_minmax(297px,_515px))]">
-      {rooms?.map((room) => (
-        <RoomFrame key={room.id} room={room} />
-      ))}
-    </div>
+    <Container fixed maxWidth="lg">
+      <Grid container spacing={12} justifyContent={"center"}>
+        {rooms?.map((room) => (
+          <Grid item sm={12} md={6} lg={6} key={room.id}>
+            <RoomFrame key={room.id} room={room} />
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
   );
 }

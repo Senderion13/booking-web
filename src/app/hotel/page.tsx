@@ -13,7 +13,7 @@ import RoomsContextProvider from "@/contexts/roomsContextProvider";
 
 export default function HotelPage() {
   return (
-    <div className="w-full relative bg-white overflow-hidden flex flex-col items-start justify-start gap-[2.25rem] leading-[normal] tracking-[normal] mq750:gap-[1.125rem]">
+    <div className="w-full min-h-screen bg-white overflow-hidden flex flex-col items-start justify-between gap-[2.25rem] leading-[normal] tracking-[normal] mq750:gap-[1.125rem]">
       <header className="self-stretch bg-steelblue-100 overflow-hidden flex flex-col items-center justify-start pt-[1.75rem] px-[1.25rem] pb-[1.75rem] box-border gap-[2.375rem] max-w-full text-left text-[1.5rem] text-white mq750:gap-[1.188rem]">
         <Header />
       </header>

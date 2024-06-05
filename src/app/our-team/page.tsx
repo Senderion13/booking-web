@@ -8,7 +8,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 const teamMembers = [
   {
     name: "Artem Bielikov",
-    role: "Back-end developer",
+    role: "Full-stack developer",
     group: "КІУКІ-21-1",
     image: "artem-bielikov.jpg",
   },
@@ -49,7 +49,7 @@ export default function OurTeam() {
     <div className="flex w-full min-h-screen flex-col justify-between gap-[2.375rem] mq750:gap-[1.188rem]">
       <Head />
       <Container fixed maxWidth="xl">
-        <div className="flex w-full h-full flex-col jusitfy between gap-[1rem]">
+        <div className="flex w-full h-full flex-col gap-[1rem]">
           <div className="text-gray-0 text-[2.7rem] text-center font-bold pb-3">
             Наша команда
           </div>
