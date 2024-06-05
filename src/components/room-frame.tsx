@@ -12,6 +12,8 @@ import {
 import {
   BreakfastDining,
   BreakfastDiningOutlined,
+  Fastfood,
+  FastfoodOutlined,
   Liquor,
   LiquorOutlined,
   LocalParkingOutlined,
@@ -43,19 +45,11 @@ const RoomFrame: NextPage<RoomFrame> = ({ className = "", room }) => {
             height={180}
           />
           <FormGroup className="self-stretch flex flex-column items-start justify-center m-auto">
-            {room?.hasWifi ? <WifiOutlined /> : <Wifi color="disabled" />}
-            {room?.hasParking ? (
-              <LocalParkingOutlined />
-            ) : (
-              <LocalParkingRounded color="disabled" />
-            )}
-            {room?.hasBar ? <LiquorOutlined /> : <Liquor color="disabled" />}
-            {room?.hasShower ? <ShowerOutlined /> : <Shower color="disabled" />}
-            {room?.hasBreakfast ? (
-              <BreakfastDiningOutlined />
-            ) : (
-              <BreakfastDining color="disabled" />
-            )}
+            {room?.hasWifi ? <WifiOutlined /> : <></>}
+            {room?.hasParking ? <LocalParkingOutlined /> : <></>}
+            {room?.hasBar ? <LiquorOutlined /> : <></>}
+            {room?.hasShower ? <ShowerOutlined /> : <></>}
+            {room?.hasBreakfast ? <FastfoodOutlined /> : <></>}
           </FormGroup>
         </div>
         <Typography variant="h5">
