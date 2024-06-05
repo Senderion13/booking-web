@@ -10,7 +10,7 @@ export type Hotel = {
   location: string;
   rating: number;
   description: string;
-  images: string;
+  images: string[];
 };
 
 const Hotels: NextPage = () => {

@@ -11,32 +11,17 @@ import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views-react-18-fix";
 import { autoPlay } from "react-swipeable-views-utils";
+import { useContext, useState } from "react";
+import { HotelContext } from "@/contexts/hotelContextProvider";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const images = [
-  {
-    label: "San Francisco – Oakland Bay Bridge, United States",
-    imgPath: "/hotel1@2x.png",
-  },
-  {
-    label: "Bird",
-    imgPath: "/hotel1@2x.png",
-  },
-  {
-    label: "Bali, Indonesia",
-    imgPath: "/hotel1@2x.png",
-  },
-  {
-    label: "Goč, Serbia",
-    imgPath: "/hotel1@2x.png",
-  },
-];
-
 export default function SwipeableTextMobileStepper() {
+  const { hotel } = useContext(HotelContext);
+
   const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = images.length;
+  const [activeStep, setActiveStep] = useState(0);
+  const maxSteps = hotel?.images?.length;
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -69,8 +54,8 @@ export default function SwipeableTextMobileStepper() {
         onChangeIndex={handleStepChange}
         enableMouseEvents
       >
-        {images.map((step, index) => (
-          <div key={step.label}>
+        {hotel?.images?.map((step, index) => (
+          <div key={index}>
             {Math.abs(activeStep - index) <= 2 ? (
               <Box
                 component="img"
@@ -81,8 +66,8 @@ export default function SwipeableTextMobileStepper() {
                   overflow: "hidden",
                   width: "100%",
                 }}
-                src={step.imgPath}
-                alt={step.label}
+                src={"http://" + process.env.NEXT_PUBLIC_BASE_URL + step}
+                alt=""
               />
             ) : null}
           </div>
