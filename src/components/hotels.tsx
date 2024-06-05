@@ -10,6 +10,7 @@ export type Hotel = {
   location: string;
   rating: number;
   description: string;
+  images: string;
 };
 
 const Hotels: NextPage = () => {
@@ -22,18 +23,24 @@ const Hotels: NextPage = () => {
         Найкращі готелі Києва
       </h3>
       <div className="self-stretch overflow-x-auto grid flex-row items-start justify-start gap-[1.312rem] max-w-full grid-cols-[repeat(3,_minmax(297px,_1fr))] mq750:grid-cols-[minmax(297px,_1fr)] mq1050:justify-center mq1050:grid-cols-[repeat(2,_minmax(297px,_515px))]">
-        {hotels?.map((hotel) => {
-          return (
-            <a key={hotel.id}>
-              <HotelFrame
-                hotelphoto="/hotel3@2x.png"
-                hotelname={hotel.title.replace(/_/g, " ")}
-                location={hotel.location.replace(/_/g, " ")}
-                rating={hotel.rating / 2}
-              />
-            </a>
-          );
-        })}
+        {!hotels
+          ? "Loading..."
+          : hotels?.map((hotel) => {
+              return (
+                <a key={hotel.id} href={"/hotel?hotelId=" + hotel.id}>
+                  <HotelFrame
+                    hotelphoto={
+                      "http://" +
+                      process.env.NEXT_PUBLIC_BASE_URL +
+                      hotel.images[0]
+                    }
+                    hotelname={hotel.title.replace(/_/g, " ")}
+                    location={hotel.location.replace(/_/g, " ")}
+                    rating={hotel.rating / 2}
+                  />
+                </a>
+              );
+            })}
       </div>
     </div>
   );
