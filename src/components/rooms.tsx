@@ -35,7 +35,6 @@ export default function Rooms() {
   );
   useEffect(() => {
     setRooms(data);
-    console.log(data);
   }, [data]);
   return (
     <Container fixed maxWidth="lg">
